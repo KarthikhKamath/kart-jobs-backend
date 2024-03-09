@@ -13,7 +13,7 @@ const app = express();
 config({ path: "./config/config.env" });
 
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "https://kartjobs.netlify.app",
   methods: ["GET", "POST", "DELETE", "PUT"],
   credentials: true,
 };
