@@ -13,7 +13,7 @@ const app = express();
 config({ path: "./config/config.env" });
 
 const corsOptions = {
-  origin: "http://localhost:4000",
+  origin: "http://localhost:5173",
   methods: ["GET", "POST", "DELETE", "PUT"],
   credentials: true,
 };
