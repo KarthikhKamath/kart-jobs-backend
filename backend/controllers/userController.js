@@ -49,12 +49,14 @@ export const logout = catchAsyncErrors(async (req, res, next) => {
     .cookie("token", "", {
       httpOnly: true,
       expires: new Date(Date.now()),
+      secure: process.env.NODE_ENV === 'production', // Set secure based on environment
     })
     .json({
       success: true,
       message: "Logged Out Successfully.",
     });
 });
+
 
 
 export const getUser = catchAsyncErrors((req, res, next) => {
