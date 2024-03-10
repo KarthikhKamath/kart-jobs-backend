@@ -4,7 +4,9 @@ import ErrorHandler from "./error.js";
 import jwt from "jsonwebtoken";
 
 export const isAuthenticated = catchAsyncErrors(async (req, res, next) => {
+  console.log("cookie", req);
   const { token } = req.cookies;
+  
   if (!token) {
     return next(new ErrorHandler("User Not Authorized", 401));
   }
