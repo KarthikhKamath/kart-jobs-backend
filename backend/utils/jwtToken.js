@@ -1,12 +1,15 @@
 export const sendToken = (user, statusCode, res, message) => {
   const token = user.getJWTToken();
   const options = {
-    expires: new Date(
-      Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
-    ),
-    httpOnly: true,
-    domain: ".netlify.app"
-  };
+  expires: new Date(
+    Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
+  ),
+  httpOnly: true,
+  domain: "kartjobs.netlify.app",
+  secure: true,
+  sameSite: 'None',
+};
+
 
   res.status(statusCode).cookie("token", token, options).json({
     success: true,
