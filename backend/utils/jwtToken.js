@@ -7,7 +7,6 @@ export const sendToken = (user, statusCode, res, message) => {
   httpOnly: true,
   domain: "kartjobs.netlify.app",
   secure: true,
-  sameSite: 'None',
 };
 
 
