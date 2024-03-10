@@ -5,9 +5,6 @@ export const sendToken = (user, statusCode, res, message) => {
     Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
   ),
   httpOnly: true,
-  secure: true,
-  sameSite: 'None',
-  domain: "kartjobs.netlify.app",
 };
 
 
