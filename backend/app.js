@@ -9,11 +9,6 @@ import { errorMiddleware } from "./middlewares/error.js";
 import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload";
 
-
-app.use(cors(corsOptions));
-app.use(cookieParser());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 const app = express();
 config({ path: "./config/config.env" });
 
@@ -22,6 +17,11 @@ const corsOptions = {
   methods: ["GET", "POST", "DELETE", "PUT"],
   credentials: true,
 };
+
+app.use(cors(corsOptions));
+app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(
   fileUpload({
