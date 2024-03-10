@@ -8,6 +8,7 @@ export const sendToken = (user, statusCode, res, message) => {
     secure: true, // Set secure based on environment
     httpOnly: true,
     domain: "http://localhost:5173",
+    sameSite: "none",
   };
 
   res.status(statusCode).cookie("token", token, options).json({
