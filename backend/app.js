@@ -11,6 +11,7 @@ import fileUpload from "express-fileupload";
 
 const app = express();
 config({ path: "./config/config.env" });
+app.use(cookieParser());
 
 const corsOptions = {
   origin: "https://kartjobs.netlify.app",
@@ -19,7 +20,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
